@@ -19,10 +19,7 @@ def asciify(source, result):
                 avg = s//(w*h)
                 nueva = Image.new('L', (w,h), (0))
                 draw = ImageDraw.Draw(nueva)
-                if avg in symbol:
-                    draw.text((0,0), symbol[avg], (255))
-                else:
-                    draw.text((0,0), ' ', (255))
+                draw.text((0,0), symbol[avg], (255))
                 img.paste(nueva, (c*w, r*h))
     img.show()
     img.save(result)
@@ -30,7 +27,7 @@ def asciify(source, result):
 def main():
     if len(sys.argv) != 3:
         print('Wrong input parameters count')
-        print('Usage: Python ascii_art.py <source image> <destiny image>')
+        print('Usage: python ascii_art.py <source image> <destiny image>')
     else:
         asciify(sys.argv[1], sys.argv[2])
 
